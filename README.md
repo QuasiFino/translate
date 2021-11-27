@@ -1,1 +1,1 @@
-# Translate App
+# Using Context instead of Redux
