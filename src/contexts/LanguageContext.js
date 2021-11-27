@@ -1,3 +1,9 @@
 import React from "react";
 
-export default React.createContext('english'); //passing default value
+// const context = React.createContext('english'); //passing default value
+
+// console.log(context);  //shows consumer
+
+// export default context;
+
+export default React.createContext('english');;
