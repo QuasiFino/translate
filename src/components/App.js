@@ -1,10 +1,12 @@
 import React from 'react';
 import UserCreate from './UserCreate';
 import LanguageContext from '../contexts/LanguageContext';
+import ColorContext from '../contexts/ColorContext';
 
 class App extends React.Component {
   state = {
-    language: 'english'
+    language: 'english',
+    color: 'red'
   }
 
   onLanguageChange = language => { //callback method
@@ -20,17 +22,10 @@ class App extends React.Component {
           <i className="flag nl" onClick={() => this.onLanguageChange('dutch')}/>
         </div>
         <LanguageContext.Provider value={this.state.language}>
-          <UserCreate />
+          <ColorContext.Provider value={this.state.color}>
+            <UserCreate />
+          </ColorContext.Provider>
         </LanguageContext.Provider>
-        /* gets val from this.state. */
-
-        <LanguageContext.Provider value={"dutch"}>
-          <UserCreate />
-        </LanguageContext.Provider>
-        /* gets default val of dutch the time of render */
-
-        <UserCreate /> 
-        /* gets default val only at the time of render */
       </div>
     );
   }
